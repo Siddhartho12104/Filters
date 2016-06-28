@@ -1,8 +1,10 @@
+<!-- Create an array of strings and sort it using the OrderBy Filter.
+ -->
 <!DOCTYPE html>
 <html>
 <head>
 	<title>
-		Filters 
+		Filters Q3
 	</title> 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 
@@ -21,12 +23,17 @@
 		<p><b>Name:</b> {{ name | uppercase }}</p>
 		<p><b>Number:</b> {{ num | number : 2 }}</p>
 		<p><b> Array before sorting : </b></p>
-		<ul>
+		<button value="Ascending" id="b1" ></button>
+		<ul id="ul1">
 			<li ng-repeat="x in gunners "> {{x}} </li>
 		</ul>
-		<p> <b>Array after sorting:</b> </p>
+		<p> <b>Array after sorting in ascending order:</b> </p>
 		<ul>
 			<li ng-repeat="x in gunners | orderBy"> {{x}} </li>
+		</ul>
+		<p> <b>Array after sorting in descending order:</b> </p>
+		<ul>
+			<li ng-repeat="x in gunners | orderBy:'-'"> {{x}} </li>
 		</ul>
 
 	</div>

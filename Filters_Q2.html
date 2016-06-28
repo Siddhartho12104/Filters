@@ -1,0 +1,20 @@
+<!-- Program the number 4.557693 to 2 decimal places using Number Filter
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Filters Q2</title> 
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script type="text/javascript">
+		var mod=angular.module("func1",[]);
+		mod.controller("controller",function($scope){
+			$scope.n1 =  4.557693;                      //Initializing the number inside the controller
+		});
+	</script>
+</head>
+<body>
+	<div ng-app="func1" ng-controller="controller">
+		<p><b>Number:</b> {{ n1 | number : 2 }}</p><br>
+	</div>
+</body>
+</html>
