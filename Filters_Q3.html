@@ -1,0 +1,49 @@
+<!-- Create an array of strings and sort it using the OrderBy Filter.
+ -->
+
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="mycontroller">
+
+<!-- Printing the original array in the form of a list
+ --><p>Array before sorting</p>
+
+<ul>
+			<li ng-repeat="x in gunners "> {{x}} </li>
+</ul>
+
+
+<!-- Printing the sorted array on user's action
+ -->
+<table border="2px solid">
+<tr>
+<th ng-click="orderByMe('name')">Click to sort</th>
+</tr>
+<tr ng-repeat="x in gunners | orderBy:myOrderBy">
+<td>{{x.name}}</td>
+</tr>
+</table>
+
+</div>
+
+<script>
+angular.module('myApp', []).controller('mycontroller', function($scope) {
+    $scope.gunners = [
+        {name:'Ozil'},
+        {name:'Cazorla'},
+        {name:'Bellerin'},
+        {name:'Xhaka'},
+        {name:'Wilshere'},
+        {name:'Sanchez'}
+        ];
+    $scope.orderByMe = function(x) {
+        $scope.myOrderBy = x;
+    }
+});
+</script>
+
+</body>
+</html>
